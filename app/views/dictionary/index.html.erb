@@ -1,6 +1,6 @@
 <h1>Today's Jumble Words are:</h1>
 <ol>
-	<% @words.each_with_index do |word, i| %>
-		<li><b>Word:</b> <%= word['word'] %> <b>Jumble:</b> <%= word['word'].jumble  %></li>
-	<% end %>
+  <% @words.each_with_index do |word, i| %>
+    <li><b>Word:</b> <%= word['word'] %> <b>Jumble:</b> <%= word['word'].jumble  %></li>
+  <% end %>
 </ol>
