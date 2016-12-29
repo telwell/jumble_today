@@ -1,0 +1,13 @@
+.word-list {
+	list-style: none;
+
+	.letter {
+		display: inline-block;
+		width: 50px;
+		height: 50px;
+		background-color: #ccc;
+		border-radius: 50px;
+		line-height: 50px;
+		text-align: center;
+	}
+}

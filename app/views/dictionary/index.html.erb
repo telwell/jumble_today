@@ -1,6 +1,20 @@
-<h1>Today's Jumble Words are:</h1>
-<ol>
-  <% @words.each_with_index do |word, i| %>
-    <li><b>Word:</b> <%= word['word'] %> <b>Jumble:</b> <%= word['word'].jumble  %></li>
-  <% end %>
-</ol>
+<section class="row fullpage flex-items-xs-center">
+
+	<div class="col-xs-6 flex-xs-middle">
+
+		<h1 class="text-center">Today's Jumble Words are:</h1>
+
+		<% @words.each_with_index do |word, i| %>
+			<section class="row">
+				<ul id="sortable<%= i %>" class="word-list" data-word="<%= word.text %>">
+					<% letters = word.jumble.split('') %>
+					<% letters.each do |letter| %>
+						<li class="letter"><%= letter %></li>
+					<% end %>
+				</ul>
+			</section>
+		<% end %>
+
+	</div>
+
+</section>
