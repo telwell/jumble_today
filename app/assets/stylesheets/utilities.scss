@@ -1,4 +1,7 @@
 .fullpage {
-	width: 100vh;
+	width: 100%;
 	height: 100vh;
+	@include media("<sm") {
+		width: 100vh!important;
+	}
 }
