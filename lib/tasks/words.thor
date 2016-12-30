@@ -31,16 +31,10 @@ class Words < Thor
 
 	desc "remove_dupes", "Remove duplicate entries that have the same ordered letters"
 	def remove_dupes
-		# Get DISTINCT ordered words (PG on production is different than local)
-		if Rails.env.production?
-			ids = Word.select(:id, :ordered).group(:ordered, :id).collect(&:id)
-		else
-			ids = Word.group(:ordered).collect(&:id)
-		end
-
-		gallows = Word.count - ids.length
+		distinct_ordered = Word.select('ordered').group('ordered').having('count(*) = 1').collect(&:ordered)
+		gallows = Word.count - distinct_ordered.length
 		# Destroy words which AREN'T distinct (duplicates)
-		Word.where.not(id: ids).destroy_all
+		Word.where.not(ordered: distinct_ordered).destroy_all
 		puts "Destroyed #{gallows} words. #{Word.count} remaining"
 	end
 
