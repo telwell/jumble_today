@@ -1,12 +1,14 @@
 <section class="row fullpage flex-items-xs-center">
 
-	<div class="col-xs-6 flex-xs-middle">
+	<div id="word-wrapper" class="col-xs-6 flex-xs-middle">
 
-		<h1 class="text-center">Today's Jumble Words are:</h1>
+		<h1 class="text-xs-center">Today's Jumble Words are:</h1>
 
 		<% @words.each_with_index do |word, i| %>
-			<section class="row">
-				<ul id="sortable<%= i %>" class="word-list" data-word="<%= word.text %>">
+			<section class="row flex-items-xs-center">
+				<ul id="sortable<%= i %>" class="word-list" data-word-id="<%= word.id %>"
+					<%= "data-word=#{word.text}" if Rails.env.development? %>
+				>
 					<% letters = word.jumble.split('') %>
 					<% letters.each do |letter| %>
 						<li class="letter"><%= letter %></li>

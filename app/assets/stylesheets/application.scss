@@ -1,6 +1,17 @@
 // Set any variables before bootstrap
 $enable-flex: true;
 
+// Color Scheme
+$color_1: #e63946;
+$color_2: #f1faee;
+$color_3: #a8dadc;
+$color_4: #457b9d;
+$color_5: #1d3557;
+$black: #000000;
+
+// Fonts (font-family: 'Noto Sans';)
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans:400,700');
+
 @import "bootstrap";
 @import "utilities";
 @import "theme";

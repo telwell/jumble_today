@@ -18,10 +18,12 @@ ActiveRecord::Schema.define(version: 20161229175150) do
     t.string   "ordered",    null: false
     t.integer  "length",     null: false
     t.string   "jumble",     null: false
+    t.date     "date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
+  add_index "words", ["date"], name: "index_words_on_date"
   add_index "words", ["length"], name: "index_words_on_length"
   add_index "words", ["ordered"], name: "index_words_on_ordered"
 
