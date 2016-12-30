@@ -15,4 +15,8 @@
 //= require tether
 //= require bootstrap
 //= require jquery-ui
+//
+// THANKS! http://touchpunch.furf.com/
+//= require touch-punch.min.js
+//
 //= require_tree .

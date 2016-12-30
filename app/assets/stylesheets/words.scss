@@ -1,6 +1,11 @@
 #word-wrapper {
 	background-color: rgba(168, 218, 220, .4);
 	padding: 40px;
+
+	@include media("<sm") {
+		background-color: transparent;
+		padding: 20px 0px;
+	}
 }
 
 .word-list {
@@ -26,6 +31,13 @@
 		text-align: center;
 		float: left;
 		margin-left: 10px;
+
+		@include media("<sm") {
+			width: 40px;
+			height: 40px;
+			border-radius: 40px;
+			line-height: 40px;
+		}
 	}
 
 	.letter:first-child {
