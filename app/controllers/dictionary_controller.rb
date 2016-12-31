@@ -1,5 +1,5 @@
 class DictionaryController < ApplicationController
-
+	before_action :authenticate_user!
 
   def index
     @words = Word.where(date: Date.today)

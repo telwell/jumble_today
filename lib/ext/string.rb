@@ -1,14 +1,10 @@
+# Monkey patch for Strings
 class String
-
-
   def jumble
-    return self.split('').shuffle.join('')
+    split('').shuffle.join('')
   end
 
-
-	def alphabetize
-		return self.split('').sort.join('')
-	end
-
-
+  def alphabetize
+    split('').sort.join('')
+  end
 end
