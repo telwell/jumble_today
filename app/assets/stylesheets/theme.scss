@@ -1,7 +1,10 @@
+body {
+	background-image: image-url('bg2.png');
+	background-repeat: repeat;
+}
+
 main {
 	display: flex;
 	flex: 0 1 auto;
-	background-image: image-url('bg.png');
-	background-repeat: repeat;
 	font-family: 'Noto Sans';
 }

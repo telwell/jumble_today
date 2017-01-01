@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161231223911) do
+ActiveRecord::Schema.define(version: 20170101174321) do
 
   create_table "jumble_words", force: :cascade do |t|
     t.integer  "jumble_id"
@@ -51,6 +51,7 @@ ActiveRecord::Schema.define(version: 20161231223911) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.string   "username",                            null: false
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

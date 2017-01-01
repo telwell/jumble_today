@@ -10,6 +10,8 @@
 <body>
 	<%= render partial: 'shared/nav' %>
 
+	<%= render 'shared/flash' if !flash.empty? %>
+
 	<main class="container-fluid">
 		<%= yield %>
 	</main>

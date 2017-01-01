@@ -17,6 +17,7 @@ $black: #000000;
 $breakpoints: $grid-breakpoints;
 
 @import "utilities";
+@import "flash";
 @import "theme";
 @import "words";
 @import "forms";
