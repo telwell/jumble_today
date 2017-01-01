@@ -2,7 +2,8 @@ class DictionaryController < ApplicationController
 	before_action :authenticate_user!
 
   def index
-    @words = Word.where(date: Date.today)
+    # Get the most recent Jumble
+    @jumble = Jumble.last
   end
 
 

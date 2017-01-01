@@ -4,7 +4,7 @@
 
 		<h1 class="text-xs-center">Today's Jumble Words are:</h1>
 
-		<% @words.each_with_index do |word, i| %>
+		<% @jumble.words.each_with_index do |word, i| %>
 			<section class="row flex-items-xs-center">
 				<ul id="sortable<%= i %>" class="word-list" data-word-id="<%= word.id %>"
 					<%= "data-word=#{word.text}" if Rails.env.development? %>

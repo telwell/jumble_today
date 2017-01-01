@@ -1,0 +1,6 @@
+.custom-form {
+	padding: 40px;
+	@include media("<sm") {
+		padding: 20px 0;
+	}
+}

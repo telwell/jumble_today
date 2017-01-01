@@ -11,7 +11,32 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161230214433) do
+ActiveRecord::Schema.define(version: 20161231223911) do
+
+  create_table "jumble_words", force: :cascade do |t|
+    t.integer  "jumble_id"
+    t.integer  "word_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "jumble_words", ["jumble_id"], name: "index_jumble_words_on_jumble_id"
+  add_index "jumble_words", ["word_id"], name: "index_jumble_words_on_word_id"
+
+  create_table "jumbles", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "jumbles_words", force: :cascade do |t|
+    t.integer  "jumble_id"
+    t.integer  "word_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "jumbles_words", ["jumble_id"], name: "index_jumbles_words_on_jumble_id"
+  add_index "jumbles_words", ["word_id"], name: "index_jumbles_words_on_word_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false

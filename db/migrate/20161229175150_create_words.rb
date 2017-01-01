@@ -5,13 +5,11 @@ class CreateWords < ActiveRecord::Migration
       t.string :ordered, null: false
       t.integer :length, null: false
       t.string :jumble, null: false
-      t.date :date
 
       t.timestamps null: false
     end
 
     add_index(:words, :length)
     add_index(:words, :ordered)
-    add_index(:words, :date)
   end
 end

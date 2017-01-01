@@ -39,12 +39,13 @@ class Words < Thor
 	end
 
 
-	desc "today", "Select the words for today!"
-	def today
+	desc "jumble", "Create a new Jumble to be used"
+	def jumble
 		words = Word.where(length: [5,6]).limit(4).order("RANDOM()")
+    j = Jumble.new
 		words.each do |word|
-			word.date = Date.today
-			word.save!
+			j.words << word
 		end
+    j.save
 	end
 end
