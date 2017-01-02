@@ -1,5 +1,5 @@
 class DictionaryController < ApplicationController
-	
+
 
   def index
     # Get the most recent Jumble
@@ -23,7 +23,9 @@ class DictionaryController < ApplicationController
 		words = jumble.words.pluck(:text)
 		respond_to do |format|
 	    if check.sort == words.sort
-				current_user.jumbles << jumble if user_signed_in?
+				if user_signed_in? && !UserJumble.where(user_id: current_user.id, jumble_id: jumble.id).exists?
+					current_user.jumbles << jumble
+				end
 				@type = "success"
 				@msg = "You got it!"
 				@msg += " You've solved #{current_user.jumbles.count} jumbles!" if user_signed_in?
