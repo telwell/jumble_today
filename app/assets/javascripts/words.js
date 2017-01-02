@@ -1,5 +1,8 @@
 $(document).ready(function(){
-  $( " #sortable0, #sortable1, #sortable2, #sortable3" ).sortable({
+  var wordCount = $('.word-list').length;
+  var solvedCount = 0;
+
+  $( "#sortable0, #sortable1, #sortable2, #sortable3" ).sortable({
   stop: function( event, ui ) {
 		var eventId = event.target.id;
 		var wordId = $(event.target).data('word-id');
@@ -10,7 +13,7 @@ $(document).ready(function(){
     guess = guess.join('');
     $.ajax({
       url: '/check',
-      method: 'GET',
+      method: 'POST',
 			dataType: 'json',
       data: {
 				eventId: eventId,
@@ -22,6 +25,26 @@ $(document).ready(function(){
 					match = $('#' + data.eventId);
 					match.sortable( "disable" );
 					match.addClass('unjumbled');
+          solvedCount += 1;
+          if ( solvedCount == wordCount ){
+            var check = [];
+            var words = $('.word-list');
+            var jumbleId = $('#word-wrapper').data('jumble-id');
+            words.each(function(i, word){
+              var store = $(word).find('li').map(function(i, el) { return el.innerHTML; });
+              store = Array.from(store).join('');
+              check.push(store)
+            })
+            $.ajax({
+              url: '/check_victory',
+              method: 'POST',
+        			dataType: 'script',
+              data: {
+        				check: check,
+                jumbleId: jumbleId
+              }
+            })
+          }
 				}
 			},
 			error: function(xhr, status, error){

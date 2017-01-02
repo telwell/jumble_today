@@ -1,10 +1,17 @@
-<nav class="navbar navbar-fixed-top navbar-light bg-transparent">
-  <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"></button>
-  <div class="collapse navbar-toggleable-xs" id="navbarResponsive">
-    <ul class="nav navbar-nav float-xs-left float-sm-right">
-      <li class="nav-item">
+<nav class="navbar navbar-fixed-top navbar-custom bg-transparent">
+  <ul class="nav navbar-nav float-xs-right">
+    <li class="nav-item">
+      <%= link_to "Home", root_path, class: 'nav-link' %>
+    </li>
+    <li class="nav-item">
+      <%= link_to "Leaderboard", leaderboard_path, class: 'nav-link' %>
+    </li>
+    <li class="nav-item">
+      <% if user_signed_in? %>
         <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: 'nav-link' %>
-      </li>
-    </ul>
-  </div>
+      <% else %>
+        <%= link_to "Sign In", new_user_session_path, class: 'nav-link' %>
+      <% end %>
+    </li>
+  </ul>
 </nav>

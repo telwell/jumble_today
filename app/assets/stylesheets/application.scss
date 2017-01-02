@@ -16,8 +16,6 @@ $black: #000000;
 @import "_include-media";
 $breakpoints: $grid-breakpoints;
 
-@import "utilities";
-@import "flash";
+@import "utilities/*";
 @import "theme";
 @import "words";
-@import "forms";

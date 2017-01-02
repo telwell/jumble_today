@@ -1,0 +1,29 @@
+<section class="row flex-items-xs-center mx-0 w-100">
+
+	<div id="word-wrapper" class="col-xs flex-xs-middle">
+
+		<h1 class="text-xs-center">Leaderboard</h1>
+
+		<table class="table table-hover table-custom text-xs-center">
+			<thead>
+				<tr>
+					<th style="text-align: center;">Rank</th>
+					<th style="text-align: center;">Username</th>
+					<th style="text-align: center;">Victories</th>
+				</tr>
+			</thead>
+
+			<tbody>
+				<% @users.each_with_index do |user, i| %>
+				<tr>
+					<td><%= i + 1 %></td>
+					<td><%= user.username %></td>
+					<td><%= user.jumbles.count %></td>
+				</tr>
+				<% end %>
+			</tbody>
+		</table>
+
+	</div>
+
+</section>

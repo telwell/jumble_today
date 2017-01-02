@@ -1,5 +1,7 @@
 .custom-form {
 	padding: 40px;
+	color: $color_2;
+
 	@include media("<sm") {
 		padding: 20px 0;
 	}

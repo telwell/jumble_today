@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170101174321) do
+ActiveRecord::Schema.define(version: 20170101231629) do
 
   create_table "jumble_words", force: :cascade do |t|
     t.integer  "jumble_id"
@@ -28,15 +28,15 @@ ActiveRecord::Schema.define(version: 20170101174321) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "jumbles_words", force: :cascade do |t|
+  create_table "user_jumbles", force: :cascade do |t|
+    t.integer  "user_id"
     t.integer  "jumble_id"
-    t.integer  "word_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  add_index "jumbles_words", ["jumble_id"], name: "index_jumbles_words_on_jumble_id"
-  add_index "jumbles_words", ["word_id"], name: "index_jumbles_words_on_word_id"
+  add_index "user_jumbles", ["jumble_id"], name: "index_user_jumbles_on_jumble_id"
+  add_index "user_jumbles", ["user_id"], name: "index_user_jumbles_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -62,12 +62,10 @@ ActiveRecord::Schema.define(version: 20170101174321) do
     t.string   "ordered",    null: false
     t.integer  "length",     null: false
     t.string   "jumble",     null: false
-    t.date     "date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  add_index "words", ["date"], name: "index_words_on_date"
   add_index "words", ["length"], name: "index_words_on_length"
   add_index "words", ["ordered"], name: "index_words_on_ordered"
 

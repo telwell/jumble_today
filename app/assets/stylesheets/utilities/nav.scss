@@ -1,0 +1,10 @@
+.navbar-custom {
+	.nav-link {
+		color: rgba(168, 218, 220, .7);
+
+		&:hover {
+			// color: $color_1;
+			text-decoration: underline;
+		}
+	}
+}

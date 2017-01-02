@@ -1,10 +1,12 @@
-<section id="flash-wrapper">
-	<% flash.each do |key, value| %>
-		<div class="alert alert-dismissible fade in <%= bootstrap_class_for(key) %>" role="alert">
-			<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-				<span aria-hidden="true">&times;</span>
-			</button>
-			<%= value %>
-		</div>
-	<% end %>
-</section>
+<div class="row">
+	<section id="flash-wrapper" class="col-xs">
+		<% flash.each do |key, value| %>
+			<div class="alert alert-dismissible fade in <%= bootstrap_class_for(key) %>" role="alert">
+				<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+				<%= value %>
+			</div>
+		<% end %>
+	</section>
+</div>
