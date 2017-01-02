@@ -16,9 +16,16 @@
 			<tbody>
 				<% @users.each_with_index do |user, i| %>
 				<tr>
-					<td><%= i + 1 %></td>
+					<!-- Score ties properly -->
+					<% if user.victories == @last[:victories] && i != 0 %>
+						<td><%= @last[:i] + 1 %></td>
+					<% else %>
+						<td><%= i + 1 %></td>
+						<% @last[:victories] = user.victories %>
+						<% @last[:i] = i %>
+					<% end %>
 					<td><%= user.username %></td>
-					<td><%= user.count %></td>
+					<td><%= user.victories %></td>
 				</tr>
 				<% end %>
 			</tbody>
