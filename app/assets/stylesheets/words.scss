@@ -1,51 +1,51 @@
 #word-wrapper {
-	margin-top: 40px;
-	padding: 40px;
+  margin-top: 40px;
+  padding: 40px;
 
-	h1 { color: $color_2; }
+  h1 { color: $color_2; }
 
-	@include media("<sm") {
-		background-color: transparent;
-		padding: 20px 0;
-	}
+  @include media("<sm") {
+    background-color: transparent;
+    padding: 20px 0;
+  }
 }
 
 .word-list {
-	list-style: none;
-	margin: 20px 0;
-	padding: 0;
+  list-style: none;
+  margin: 20px 0;
+  padding: 0;
 
-	&.unjumbled {
-		.letter {
-			color: $color_2;
-			background-color: $color_4;
-		}
-	}
+  &.unjumbled {
+    .letter {
+      color: $color_2;
+      background-color: $color_4;
+    }
+  }
 
-	.letter {
-		display: inline-block;
-		width: 50px;
-		height: 50px;
-		float: left;
-		margin-left: 10px;
-		color: $color_2;
-		border-radius: 50px;
-		background-color: $color_5;
-		text-align: center;
-		text-transform: uppercase;
-		font-size: 2rem;
-		font-weight: bold;
-		line-height: 50px;
-		@include media("<sm") {
-			width: 40px;
-			height: 40px;
-			border-radius: 40px;
-			line-height: 40px;
-			font-size: 1.6rem;
-		}
-	}
+  .letter {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    float: left;
+    margin-left: 10px;
+    color: $color_2;
+    border-radius: 50px;
+    background-color: $color_5;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 2rem;
+    font-weight: bold;
+    line-height: 50px;
+    @include media("<sm") {
+      width: 40px;
+      height: 40px;
+      border-radius: 40px;
+      line-height: 40px;
+      font-size: 1.6rem;
+    }
+  }
 
-	.letter:first-child {
-		margin-left: 0;
-	}
+  .letter:first-child {
+    margin-left: 0;
+  }
 }

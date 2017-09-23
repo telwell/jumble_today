@@ -8,13 +8,13 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-	<%= render partial: 'shared/nav' %>
+  <%= render partial: 'shared/nav' %>
 
-	<%= render 'shared/flash' if !flash.empty? %>
+  <%= render 'shared/flash' if !flash.empty? %>
 
-	<main class="container-fluid h-100">
-		<%= yield %>
-	</main>
+  <main class="container-fluid h-100">
+    <%= yield %>
+  </main>
 
 </body>
 </html>
