@@ -1,11 +1,11 @@
-<section class="row flex-items-xs-center mx-0 w-100">
+<section class="row justify-content-center mx-0 w-100">
 
   <div id="word-wrapper" data-jumble-id="<%= @jumble.id %>" class="col-xs flex-xs-middle">
 
-    <h1 class="text-xs-center">Today's Jumble Words are:</h1>
+    <h1 class="text-center">Today's Jumble Words are:</h1>
 
     <% @jumble.words.each_with_index do |word, i| %>
-      <section class="row flex-items-xs-center">
+      <section class="row justify-content-center">
         <ul id="sortable<%= i %>" class="word-list" data-word-id="<%= word.id %>"
           <%= "data-word=#{word.text}" if Rails.env.development? %>
         >
