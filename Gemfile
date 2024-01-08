@@ -15,6 +15,7 @@ gem 'coffee-rails'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
@@ -23,6 +24,9 @@ gem 'sdoc', group: :doc
 gem 'httparty'
 gem 'devise'
 gem 'bootstrap', '~> 4.4.1'
+gem 'webrick', '~> 1.7'
+gem  'thor'
+
 source 'https://rails-assets.org' do
   gem 'rails-assets-tether', '>= 1.1.0'
 end
@@ -53,5 +57,6 @@ end
 group :production do
   gem 'pg'
   gem 'rails_12factor'
-  gem 'json', '>= 2.7.1'
 end
+
+gem "dockerfile-rails", ">= 1.6", :group => :development

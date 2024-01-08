@@ -1,4 +1,4 @@
-class CreateJumbles < ActiveRecord::Migration
+class CreateJumbles < ActiveRecord::Migration[6.0]
   def change
     create_table :jumbles do |t|
     
