@@ -1,3 +1,7 @@
+//= require jquery
+//= require jquery-ui
+//= require_tree .
+
 $(document).ready(function(){
   var wordCount = $('.word-list').length;
   var solvedCount = 0;

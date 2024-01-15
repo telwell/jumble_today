@@ -10,13 +10,8 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require tether
+//= require jquery
 //= require bootstrap
-//= require jquery3
-//= require jquery_ujs
-//= require jquery-ui
-//
-// THANKS! http://touchpunch.furf.com/
 //= require touch-punch.min.js
 //
 //= require_tree .

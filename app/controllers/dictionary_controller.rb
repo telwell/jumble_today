@@ -1,5 +1,5 @@
 class DictionaryController < ApplicationController
-
+  protect_from_forgery unless: -> { request.format.json? }
 
   def index
     # Get the most recent Jumble
